@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, User, School, BookOpen, Hash, GraduationCap, ChevronRight, CheckCircle2, Layers } from 'lucide-react';
+import { X, User, School, BookOpen, Hash, GraduationCap, ChevronRight, CheckCircle2, Layers, LogOut } from 'lucide-react';
 import { Button, Input, Card, Select } from './UI';
 import { useAuth } from '../context/AuthContext';
 import { StudentDetails, Stream } from '../types';
@@ -12,7 +12,7 @@ interface ProfileSetupModalProps {
 }
 
 const ProfileSetupModal: React.FC<ProfileSetupModalProps> = ({ isOpen, onClose, isInitialSetup = false }) => {
-  const { userProfile, updateUserProfile } = useAuth();
+  const { userProfile, updateUserProfile, logout } = useAuth();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState<StudentDetails>({
     name: '',
@@ -191,7 +191,12 @@ const ProfileSetupModal: React.FC<ProfileSetupModalProps> = ({ isOpen, onClose, 
                     Skip for now
                 </button>
             ) : (
-                <div></div> // Spacer
+                <button 
+                    onClick={logout}
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-xl transition-colors"
+                >
+                    <LogOut size={16} /> Logout
+                </button>
             )}
             
             <Button 
