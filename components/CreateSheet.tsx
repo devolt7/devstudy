@@ -52,8 +52,8 @@ const CreateSheet: React.FC<CreateSheetProps> = ({ isOpen, onClose }) => {
                             key={item.id}
                             to={item.path}
                             onClick={onClose}
-                            style={{ animationDelay: `${idx * 50}ms` }}
-                            className="flex flex-col items-start p-5 bg-slate-50 dark:bg-[#111625] border border-slate-100 dark:border-white/5 rounded-[2rem] active:scale-95 transition-all duration-300 hover:bg-white dark:hover:bg-white/5 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none hover:border-primary-200 dark:hover:border-primary-500/30 group animate-slide-up-fast opacity-0 fill-mode-forwards"
+                            style={{ animationDelay: `${idx * 50}ms`, animationFillMode: 'forwards' }}
+                            className="flex flex-col items-start p-5 bg-slate-50 dark:bg-[#111625] border border-slate-100 dark:border-white/5 rounded-[2rem] active:scale-95 transition-all duration-300 hover:bg-white dark:hover:bg-white/5 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none hover:border-primary-200 dark:hover:border-primary-500/30 group animate-slide-up-fast opacity-0"
                         >
                             <div className="w-14 h-14 rounded-2xl bg-white dark:bg-white/10 shadow-sm border border-slate-100 dark:border-white/5 flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:scale-110 group-hover:bg-primary-50 dark:group-hover:bg-primary-500/20 group-hover:text-primary-600 dark:group-hover:text-white transition-all duration-300 mb-3">
                                 <Icon size={28} strokeWidth={1.5} />
