@@ -1,0 +1,7 @@
+{
+  "name": "DEVSTUDY - Academic Platform",
+  "description": "A complete academic solution for college students handling assignments, notes, and reports with advanced AI generation and handwriting simulation.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
