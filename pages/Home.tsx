@@ -82,7 +82,7 @@ const Home: React.FC = () => {
                 </div>
 
                 {/* Mascot */}
-                <div className="relative w-72 h-72 md:w-80 md:h-80 flex-shrink-0 animate-float">
+                <div className="relative w-72 h-72 md:w-80 md:h-80 flex-shrink-0 animate-float hidden md:block">
                     <Mascot state="happy" size={320} className="w-full h-full filter drop-shadow-2xl" />
                 </div>
             </div>
