@@ -70,11 +70,19 @@ const Home: React.FC = () => {
                          >
                             <HelpCircle size={20} className="mr-2" /> How it works
                          </Button>
+                         <Button 
+                            variant="outline"
+                            size="lg"
+                            onClick={() => navigate('/about')}
+                            className="rounded-2xl px-8 border-2 hover:bg-white/50 dark:hover:bg-slate-800/50 hover:scale-105 transition-transform duration-300"
+                         >
+                            <HelpCircle size={20} className="mr-2" /> About Us
+                         </Button>
                     </div>
                 </div>
 
                 {/* Mascot */}
-                <div className="relative w-72 h-72 md:w-80 md:h-80 flex-shrink-0 animate-float hidden md:block">
+                <div className="relative w-72 h-72 md:w-80 md:h-80 flex-shrink-0 animate-float">
                     <Mascot state="happy" size={320} className="w-full h-full filter drop-shadow-2xl" />
                 </div>
             </div>
