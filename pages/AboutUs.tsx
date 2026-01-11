@@ -61,8 +61,8 @@ const AboutUs: React.FC = () => {
                 
                 <div className="relative z-10">
                     <div className="flex flex-col md:flex-row gap-8 items-start">
-                    <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 rounded-full flex items-center justify-center text-slate-400 dark:text-slate-500 shadow-inner border-4 border-white dark:border-slate-800">
-                        <User size={48} />
+                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-slate-800 overflow-hidden">
+                        <img src="/pages/dkimg.jpg" alt="Devkant Prajapati" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 space-y-5">
                         <div>
