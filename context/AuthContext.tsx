@@ -85,12 +85,28 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const signInWithGoogle = async () => {
     if (!isFirebaseConfigured()) {
         console.error("Firebase not configured");
+        alert("Firebase is not configured. Please check your API keys.");
         return;
     }
     try {
+      console.log("Starting Google Sign-In...");
       await signInWithPopup(auth, googleProvider);
-    } catch (error) {
+      console.log("Sign-in successful");
+    } catch (error: any) {
       console.error("Error signing in with Google:", error);
+      console.error("Error Code:", error.code);
+      console.error("Error Message:", error.message);
+      
+      // Handle specific errors
+      if (error.code === 'auth/cancelled-popup-request') {
+        console.warn("Popup was cancelled or blocked");
+      } else if (error.code === 'auth/popup-blocked') {
+        alert("Sign-in popup was blocked. Please allow popups for this site.");
+      } else if (error.code === 'auth/unauthorized-domain') {
+        alert("This domain is not authorized. Add localhost to Firebase Console > Authentication > Authorized domains");
+      } else {
+        alert("Sign-in failed: " + error.message);
+      }
       throw error;
     }
   };
